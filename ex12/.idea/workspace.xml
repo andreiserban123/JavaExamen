@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0963187f-281e-4250-8490-0341dc50d774" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20240303.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex12.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/json-20240303.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/produse.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Produs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tranzactii.json" afterDir="false" />
+    <list default="true" id="0963187f-281e-4250-8490-0341dc50d774" name="Changes" comment="test">
+      <change afterPath="$PROJECT_DIR$/../ex13/ex13.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,12 +83,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1717847979940</updated>
-      <workItem from="1717847981026" duration="4460000" />
+      <workItem from="1717847981026" duration="4483000" />
     </task>
+    <task id="LOCAL-00001" summary="test">
+      <option name="closed" value="true" />
+      <created>1717856638778</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717856638778</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
