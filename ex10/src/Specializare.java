@@ -1,4 +1,6 @@
-public class Specializare {
+import java.io.Serializable;
+
+public class Specializare implements Serializable {
     int codSpecializare;
     String denumire;
     int locuri;

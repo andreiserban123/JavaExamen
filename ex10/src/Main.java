@@ -1,6 +1,15 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -112,6 +121,56 @@ public class Main {
         client.start();
         server.join();
         client.join();
+
+
+        specializari.forEach(System.out::println);
+        File file = new File("specializari.xml");
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document document = builder.newDocument();
+
+        Element root = document.createElement("specializari");
+        document.appendChild(root);
+
+        specializari.forEach(specializare -> {
+            var el = document.createElement("specializare");
+            root.appendChild(el);
+            var codSpecializareEl = document.createElement("cod-specializare");
+            codSpecializareEl.setTextContent(String.valueOf(specializare.codSpecializare));
+            el.appendChild(codSpecializareEl);
+            var denumireEl  = document.createElement("denumire");
+            denumireEl.setTextContent(specializare.denumire);
+            el.appendChild(denumireEl);
+            var locuriEl = document.createElement("locuri");
+            locuriEl.setTextContent(String.valueOf(specializare.locuri));
+            el.appendChild(locuriEl);
+        });
+
+        TransformerFactory tFactory = TransformerFactory.newInstance();
+        Transformer transformer = tFactory.newTransformer();
+        transformer.transform(new DOMSource(document), new StreamResult(file));
+        System.out.println("S-a scris in xml");
+
+        File nFile = new File("specializari.xml");
+        Document myDoc = builder.parse(nFile);
+
+        NodeList nodeList  = myDoc.getElementsByTagName("specializare");
+        for (int i = 0; i <nodeList.getLength() ; i++) {
+            var node = nodeList.item(i);
+            var elEv = (Element) node;
+            System.out.println(elEv.getElementsByTagName("cod-specializare").item(0).getTextContent());
+            System.out.println(elEv.getElementsByTagName("denumire").item(0).getTextContent());
+            System.out.println(elEv.getElementsByTagName("locuri").item(0).getTextContent());
+        }
+
+        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("specializari.dat"))){
+            oos.writeObject(specializari);
+        }
+
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("specializari.dat"))){
+            specializari =(List<Specializare>) ois.readObject();
+            specializari.forEach(System.out::println);
+        }
 
     }
 }
