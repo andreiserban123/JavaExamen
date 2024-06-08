@@ -1,0 +1,20 @@
+[
+  {
+    "codProiect": 101,
+    "buget": 100000,
+    "numeProiect": "Proiect A",
+    "echipa": [
+      1,
+      2
+    ]
+  },
+  {
+    "codProiect": 102,
+    "buget": 150000,
+    "numeProiect": "Proiect B",
+    "echipa": [
+      2,
+      3
+    ]
+  }
+]

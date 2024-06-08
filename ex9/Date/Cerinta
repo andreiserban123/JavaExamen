@@ -1,0 +1,43 @@
+// În fișierul json date\candidati.json sunt centralizate opțiunile absolvenților de clasa a VIII-a pentru admiterea la liceu, sub forma (urmariti fisierul):
+// [
+//   {
+//     "cod_candidat": 1,
+//     "nume_candidat": "Pop Marcel",
+//     "media": 8.50,
+//     "optiuni": [
+//       {
+//         "cod_liceu": 1,
+//         "cod_specializare": 1
+//       },
+//    ...
+//     ]
+//   },
+//   ...
+// ]
+
+// Liceele sunt memorate în fișierul text date\licee.txt,cate doua linii pentru fiecare liceu, astfel:
+// cod liceu,nume liceu,N
+// cod specializare 1,numar locuri 1,..., cod specializare N, numar locuri N
+
+// Să se scrie o aplicație Java care să îndeplinească următoarele cerințe:
+
+// 1. Să afișeze la consolă numărul de candidați cu medii mai mari sau egale cu 9
+// Punctaj: 1 punct
+// Criteriu de acordare: afișare corectă la consolă (100% DONE!)
+
+// 2. Să se afișeze lista liceelor sortată descrescător după numărul total de locuri.
+// Pentru fiecare liceu se va afișa codul liceului, numele liceului și numărul total de locuri.
+// Punctaj: 1 punct
+// Criteriu de acordare: afișare corectă la consolă (100% DONE!)
+
+// 3. Să se listeze în fișierul jurnal.txt candidații ordonați descrescător după numărul de opțiuni (criteriul 1) iar în caz de egalitate după medie (criteriul 2).
+// Pentru fiecare candidat se va scrie codul, numele, numărul de opțiuni și media de admitere.
+// Punctaj: 1 punct
+// Criteriu de acordare: vizualizare fișier jurnal.txt (100% DONE!)
+
+// 4. Să se creeze tabela CANDIDATI în baza de date sqlite examen.db și să se salveze opțiunile candidaților.
+// Tabela va avea câmpurile: cod_candidat - integer, nume_candidat- text, medie - double și numar_optiuni - integer.
+// Comanda creare:
+// "create table IF NOT EXISTS CANDIDATI (cod_candidat integer,nume_candidat text,medie double,numar_optiuni integer)"
+// Punctaj: 2 puncte
+// Criteriu de acordare - Vizualizare tabela

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<proiecte_finalizate>
+    <proiect_finalizat>
+        <cod_proiect>101</cod_proiect>
+        <nume_proiect>Proiect A</nume_proiect>
+        <an_finalizare>2022</an_finalizare>
+    </proiect_finalizat>
+    <proiect_finalizat>
+        <cod_proiect>102</cod_proiect>
+        <nume_proiect>Proiect B</nume_proiect>
+        <an_finalizare>2021</an_finalizare>
+    </proiect_finalizat>
+    <proiect_finalizat>
+        <cod_proiect>103</cod_proiect>
+        <nume_proiect>Proiect C</nume_proiect>
+        <an_finalizare>2023</an_finalizare>
+    </proiect_finalizat>
+    <proiect_finalizat>
+        <cod_proiect>104</cod_proiect>
+        <nume_proiect>Proiect D</nume_proiect>
+        <an_finalizare>2020</an_finalizare>
+    </proiect_finalizat>
+    <proiect_finalizat>
+        <cod_proiect>105</cod_proiect>
+        <nume_proiect>Proiect E</nume_proiect>
+        <an_finalizare>2023</an_finalizare>
+    </proiect_finalizat>
+</proiecte_finalizate>
