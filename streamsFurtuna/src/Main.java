@@ -77,7 +77,6 @@ public class Main {
                     });
                     longHash.put(agent.getCnp(), telefonane);
                 }
-
                 , HashMap::putAll
         );
         cerinta11.forEach((k, v) -> {
