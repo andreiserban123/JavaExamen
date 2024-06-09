@@ -5,8 +5,9 @@ import org.w3c.dom.Element;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,7 @@ public class Main {
     static List<Program> programe = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
+        // Citirea candidaților din JSON
         try (BufferedReader bf = new BufferedReader(new FileReader("candidati.json"))) {
             var tokener = new JSONTokener(bf);
             var arr = new JSONArray(tokener);
@@ -39,6 +41,7 @@ public class Main {
             }
         }
 
+        // Citirea programelor din XML
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse("programe.xml");
@@ -63,6 +66,7 @@ public class Main {
             System.out.println(p.denumire + " - " + p.nrLocuri + " locuri");
         });
         System.out.println("--------------------Cerinta 3----------------------");
+
         String createTableSQL = "CREATE TABLE IF NOT EXISTS OptiuniCandidati (\n" +
                 "    nume TEXT,\n" +
                 "    codProgram INTEGER,\n" +
@@ -70,6 +74,7 @@ public class Main {
                 ");";
         String insertSQL = "INSERT INTO OptiuniCandidati VALUES (?, ?, ?)";
         String selectSQL = "SELECT * FROM OptiuniCandidati";
+
         try (var con = DriverManager.getConnection("jdbc:sqlite:admitere.db")) {
 
             try (var stm = con.createStatement()) {
@@ -102,6 +107,60 @@ public class Main {
             System.out.println(denumire + " - " + e.getValue());
         });
 
+        System.out.println("------------------Cerinta 5-----------------------");
 
+        try (ServerSocket server = new ServerSocket(8080)) {
+            System.out.println("SERVER STARTED ON PORT 8080");
+            while (true) {
+                Socket client = server.accept();
+                System.out.println("Un client s-a conectat");
+                new ClientHandler(client).start();
+            }
+        }
+
+    }
+
+    static class ClientHandler extends Thread {
+        Socket client;
+
+        public ClientHandler(Socket client) {
+            this.client = client;
+        }
+
+        @Override
+        public void run() {
+            try {
+                var in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+                var out = new PrintWriter(client.getOutputStream(), true);
+
+                String denumireProgram = in.readLine();
+                System.out.println("Am primit denumirea programului: " + denumireProgram);
+
+                int codProgram = programe.stream()
+                        .filter(p -> p.denumire.equals(denumireProgram))
+                        .map(p -> p.codProgram)
+                        .findFirst()
+                        .orElse(-1);
+
+                if (codProgram == -1) {
+                    out.println("Programul nu a fost gasit");
+                } else {
+                    List<String> listaCandidati = candidati.stream()
+                            .filter(c -> c.optiuni.stream().anyMatch(op -> op.codProgram == codProgram))
+                            .map(c -> c.nume)
+                            .collect(Collectors.toList());
+
+                    out.println(String.join(", ", listaCandidati));
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } finally {
+                try {
+                    client.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }
