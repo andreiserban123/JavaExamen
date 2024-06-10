@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="json-20190722">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../ex2/json-20190722.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../ex2/sqlite-jdbc-3.41.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

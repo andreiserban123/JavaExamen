@@ -1,0 +1,5 @@
+Candidat{cod_candidat=1, nume_candidat='Pop Marcel', media=8.5, optiuni=[Optiune{cod_liceu=1, cod_specializare=1}, Optiune{cod_liceu=1, cod_specializare=2}, Optiune{cod_liceu=2, cod_specializare=1}]}
+Candidat{cod_candidat=5, nume_candidat='Muntean Loredana', media=9.45, optiuni=[Optiune{cod_liceu=4, cod_specializare=1}, Optiune{cod_liceu=5, cod_specializare=1}]}
+Candidat{cod_candidat=2, nume_candidat='Popescu Maria', media=9.0, optiuni=[Optiune{cod_liceu=1, cod_specializare=1}, Optiune{cod_liceu=2, cod_specializare=1}]}
+Candidat{cod_candidat=3, nume_candidat='Popa Adriana', media=9.9, optiuni=[Optiune{cod_liceu=1, cod_specializare=2}]}
+Candidat{cod_candidat=4, nume_candidat='Comsa Maria', media=9.3, optiuni=[Optiune{cod_liceu=4, cod_specializare=1}]}
