@@ -3,9 +3,11 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -18,6 +20,26 @@ import java.util.stream.Collectors;
 public class Main {
     static List<Produs> produse = new ArrayList<>();
     static List<Vanzare> vanzari = new ArrayList<>();
+    static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+    public static void citireXML() throws Exception {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document document = builder.parse("Date\\vanzari.xml");
+
+
+        NodeList nodeList = document.getElementsByTagName("vanzare");
+        for (int i = 0; i < nodeList.getLength(); i++) {
+            var node = nodeList.item(i);
+            var el = (Element) node;
+            int id = Integer.parseInt(el.getElementsByTagName("id").item(0).getTextContent());
+            int id_produs = Integer.parseInt(el.getElementsByTagName("id_produs").item(0).getTextContent());
+            int cantitate = Integer.parseInt(el.getElementsByTagName("cantitate").item(0).getTextContent());
+            Date data = dateFormat.parse(el.getElementsByTagName("data").item(0).getTextContent());
+            Vanzare v = new Vanzare(id, id_produs, cantitate, data);
+            vanzari.add(v);
+        }
+    }
 
     public static void main(String[] args) throws Exception {
         try (BufferedReader br = new BufferedReader(new FileReader("produse.json"))) {
@@ -33,23 +55,12 @@ public class Main {
                 p.categorie = obj.getString("categorie");
                 produse.add(p);
             }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        Document document = builder.parse(new File("vanzari.xml"));
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        var nodeList = document.getElementsByTagName("vanzare");
-        for (int i = 0; i < nodeList.getLength(); i++) {
-            var node = nodeList.item(i);
-            var el = (Element) node;
-            int id = Integer.parseInt(el.getElementsByTagName("id").item(0).getTextContent());
-            int id_produs = Integer.parseInt(el.getElementsByTagName("id_produs").item(0).getTextContent());
-            int cantitate = Integer.parseInt(el.getElementsByTagName("cantitate").item(0).getTextContent());
-            Date data = dateFormat.parse(el.getElementsByTagName("data").item(0).getTextContent());
-            Vanzare v = new Vanzare(id, id_produs, cantitate, data);
-            vanzari.add(v);
-        }
+        citireXML();
 
         // Să se afișeze la consolă lista produselor și prețul mediu al acestora pe categorii
         DecimalFormat decimalFormat = new DecimalFormat("#.00");
@@ -120,7 +131,7 @@ public class Main {
         produse.stream().sorted((p1, p2) -> Double.compare(p2.pret, p1.pret)).forEach(System.out::println);
         System.out.println("-----------------------CERINTA 7------------------------");
         // clientul trimite un id de produs, iar serverul returneaza denumire produs + vanzarile cu data si cantitate
-        Thread server = new Thread(()->{
+        Thread server = new Thread(() -> {
             try (ServerSocket serverSocket = new ServerSocket(8080)) {
                 System.out.println("SERVER STARTED ON 8080");
                 var cli = serverSocket.accept();
@@ -147,7 +158,7 @@ public class Main {
             }
         });
 
-        Thread client = new Thread(()->{
+        Thread client = new Thread(() -> {
             try (Socket con = new Socket("localhost", 8080)) {
                 var in = new BufferedReader(new InputStreamReader(con.getInputStream()));
                 var out = new PrintWriter(con.getOutputStream(), true);
