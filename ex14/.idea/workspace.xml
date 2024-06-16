@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96b0a2ba-9df9-4c39-916a-b99866e81505" name="Changes" comment="testul 14" />
+    <list default="true" id="96b0a2ba-9df9-4c39-916a-b99866e81505" name="Changes" comment="scriere in db">
+      <change beforePath="$PROJECT_DIR$/../ex16/candidati.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex16/exam.db" beforeDir="false" afterPath="$PROJECT_DIR$/../ex16/exam.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex16/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ex16/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,25 +36,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Client.executor": "Run",
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "X:/facultate/java/incercarileMELE/ex2/sqlite-jdbc-3.41.2.1.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;X:/facultate/java/incercarileMELE/ex2/sqlite-jdbc-3.41.2.1.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="X:\facultate\java\incercarileMELE\ex14" />
@@ -100,6 +104,7 @@
       <updated>1717912901553</updated>
       <workItem from="1717912902593" duration="4892000" />
       <workItem from="1717930420628" duration="2171000" />
+      <workItem from="1718043629687" duration="134000" />
     </task>
     <task id="LOCAL-00001" summary="testul 14">
       <option name="closed" value="true" />
@@ -109,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717932613943</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="scriere in db">
+      <option name="closed" value="true" />
+      <created>1718043644384</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718043644384</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +130,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="testul 14" />
-    <option name="LAST_COMMIT_MESSAGE" value="testul 14" />
+    <MESSAGE value="scriere in db" />
+    <option name="LAST_COMMIT_MESSAGE" value="scriere in db" />
   </component>
 </project>

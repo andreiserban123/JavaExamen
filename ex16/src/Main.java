@@ -162,7 +162,7 @@ public class Main {
             System.out.println("XML scris");
 
             //citire xml
-            document = builder.parse(new File("candidati.xml"));
+            document = builder.parse("candidati.xml");
             var nodeList = document.getElementsByTagName("candidat");
             for (int i = 0; i < nodeList.getLength(); i++) {
                 var node = nodeList.item(i);
