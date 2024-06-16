@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<candidati>
+    <candidat>
+        <cod_candidat>1</cod_candidat>
+        <nume_candidat>Pop Marcel</nume_candidat>
+        <media>8.5</media>
+        <optiuni>
+            <optiune>
+                <cod_specializare>1</cod_specializare>
+                <cod_liceu>1</cod_liceu>
+            </optiune>
+            <optiune>
+                <cod_specializare>2</cod_specializare>
+                <cod_liceu>1</cod_liceu>
+            </optiune>
+            <optiune>
+                <cod_specializare>1</cod_specializare>
+                <cod_liceu>2</cod_liceu>
+            </optiune>
+        </optiuni>
+    </candidat>
+    <candidat>
+        <cod_candidat>2</cod_candidat>
+        <nume_candidat>Popescu Maria</nume_candidat>
+        <media>9.0</media>
+        <optiuni>
+            <optiune>
+                <cod_specializare>1</cod_specializare>
+                <cod_liceu>1</cod_liceu>
+            </optiune>
+            <optiune>
+                <cod_specializare>1</cod_specializare>
+                <cod_liceu>2</cod_liceu>
+            </optiune>
+        </optiuni>
+    </candidat>
+    <candidat>
+        <cod_candidat>3</cod_candidat>
+        <nume_candidat>Popa Adriana</nume_candidat>
+        <media>9.9</media>
+        <optiuni>
+            <optiune>
+                <cod_specializare>2</cod_specializare>
+                <cod_liceu>1</cod_liceu>
+            </optiune>
+        </optiuni>
+    </candidat>
+    <candidat>
+        <cod_candidat>4</cod_candidat>
+        <nume_candidat>Comsa Maria</nume_candidat>
+        <media>9.3</media>
+        <optiuni>
+            <optiune>
+                <cod_specializare>1</cod_specializare>
+                <cod_liceu>4</cod_liceu>
+            </optiune>
+        </optiuni>
+    </candidat>
+    <candidat>
+        <cod_candidat>5</cod_candidat>
+        <nume_candidat>Muntean Loredana</nume_candidat>
+        <media>9.45</media>
+        <optiuni>
+            <optiune>
+                <cod_specializare>1</cod_specializare>
+                <cod_liceu>4</cod_liceu>
+            </optiune>
+            <optiune>
+                <cod_specializare>1</cod_specializare>
+                <cod_liceu>5</cod_liceu>
+            </optiune>
+        </optiuni>
+    </candidat>
+</candidati>
